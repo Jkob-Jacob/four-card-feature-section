@@ -104,7 +104,7 @@ header {
     border-top-color: var(--Blue);
 }
 
-@media screen and (max-width: 1155px) {
+@media screen and (max-width: 1160px) {
     .container__item--push {
         transform: translateY(0%);
     }
