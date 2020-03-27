@@ -1,179 +1,112 @@
 * {
-    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-body {
-    font-size: 15px;
-    color: hsl(234, 12%, 34%);
+:root {
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+
+    --VeryDarkBlue: hsl(234, 12%, 34%);
+    --GrayishBlue: hsl(229, 6%, 66%);
+    --VeryLightGray: hsl(0, 0%, 98%);
+
+    --light: 200;
+    --medium: 400;
+    --bold: 600;
 }
 
-p {
-    font-size: 0.8em;
-    font-weight: lighter;
-    color: hsl(229, 6%, 66%);
-    letter-spacing: 0.5px;
+header, section {
+    display: block;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;     
+    background-color: var(--VeryLightGray);
 }
 
 h1 {
-    font-size: 1.5em;
-    color:  hsl(229, 6%, 66%);
+    color: var(--VeryDarkBlue);
+    font-weight: var(--light);
 }
 
-.emp {
-    display: block;
-    color: hsl(234, 12%, 34%);
+h1 span {
+    font-weight: var(--bold);
 }
 
+p {
+    color: var(--GrayishBlue);
+    font-weight: var(--medium);
+}
+
+
+header {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+}
 
 .container {
-    width: 80%;
-    margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-}
-
-.header {
-    width: 80%;
-    text-align: center;
+    justify-content: center;
+    max-width: 1140px;
     margin: 0 auto;
-    font-size: 1em;
-}
-
-.container__child {
-    margin: 0px auto;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    column-gap: 1em;
-    align-items: center;
-    width: 100%;
 }
 
 .container__item {
-    display: grid;
-    grid-template-rows: repeat(2,1fr);
-    grid-template-columns: 1fr;
-    row-gap: 1em;
-    padding: 1em;
-    border: 2px solid hsl(0, 0%, 98%);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05), 0 6px 6px rgba(0,0,0,0.1);
-    border-radius: 0.5em;
-    
+    background-color: white;
+    padding: 20px;
+    margin: 15px;
+    width: 350px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05),
+        0 6px 6px rgba(0,0,0,0.1);
+    border-radius: 5px;
 }
 
-.container__item--double {
-    padding: 0;
-    border: none;
-    box-shadow: none;
+.container__item h3 {
+    margin: 0;
 }
 
-.content {
+.container__item p {
     font-size: 0.8em;
-    grid-column: 1 / span 2;
+    margin: 1em 0 2em
 }
 
-.heading {
+.container__item img {
     display: block;
-    font-size: 0.8rem;
-    font-weight: 800;
-    padding-bottom: 0.5em;
-    color:hsl(234, 12%, 34%);
+    margin-left: auto;
 }
 
-
-.logo {
-    grid-row-start: 2;
-    grid-column: 1 / span 2;
-    justify-self: end;
-    width: 2.5em;
+.container__item--push {
+    transform: translateY(50%);
 }
-
 .border--top {
     border-top: 2px solid;
 }
 
 .border__top--red {
-    border-top-color: hsl(0, 78%, 62%);
+    border-top-color: var(--Red);   
 }
 
+
 .border__top--cyan {
-    border-top-color: hsl(180, 62%, 55%);
+    border-top-color: var(--Cyan);   
+}
+
+
+.border__top--orange {
+    border-top-color: var(--Orange);   
 }
 
 .border__top--blue {
-    border-top-color: hsl(212, 86%, 64%);
+    border-top-color: var(--Blue);
 }
 
-.border__top--orange {
-    border-top-color: hsl(34, 97%, 64%);
-}
-
-
-@media screen and (max-width: 910px) {
-
-    body {
-        font-size: 10px;
-    }
-
-   .container__item p {
-       font-size: 0.8em;
-   }
-
-   .heading {
-       font-size: 1.5em;
-   }
-
-    .logo {
-        width: 2.5em;
-    }
-}
-
-@media screen and (max-width: 714px) {
-
-    body {
-        font-size: 9px;
-    }
-
-}
-
-@media screen and (max-width: 620px) {
-
-    body {
-        font-size: 12px;
-    }
-
-    .container__child {
-        display: grid;
-        grid-template-rows: repeat(1,1fr);
-        grid-template-columns: none;
-        row-gap: 1em;
-        
-    }
-
-    .container__item--double {
-        box-shadow: none;
-    }
-
-    .heading {
-        font-size: 1.5em;
-    }
-
-    .logo {
-        width: 2em;
-    }
-}
-
-@media screen and (max-width: 375px) {
-    body {
-        font-size: 10px;
-    }
-
-    .logo {
-        width: 2.5em;
-    }
-
-    .header {
-        font-size: 1em;
+@media screen and (max-width: 1155px) {
+    .container__item--push {
+        transform: translateY(0%);
     }
 }
 
